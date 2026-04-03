@@ -6,6 +6,7 @@ class Config:
     # Flask
     SECRET_KEY = os.environ.get("SECRET_KEY", "dev-secret-change-me")
     DEBUG = os.environ.get("DEBUG", "0") == "1"
+    FRONTEND_ORIGIN = os.environ.get("FRONTEND_ORIGIN", "*")
 
     # Database
     # SQLite for local/offline by default.
@@ -35,6 +36,7 @@ class Config:
 
     # SocketIO
     SOCKETIO_MESSAGE_QUEUE = os.environ.get("SOCKETIO_MESSAGE_QUEUE")  # optional for multi-worker
+    SOCKETIO_ASYNC_MODE = os.environ.get("SOCKETIO_ASYNC_MODE", "threading")
 
     # Matching
     MATCH_WEIGHTS = {

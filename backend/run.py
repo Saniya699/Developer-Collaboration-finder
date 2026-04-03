@@ -16,7 +16,7 @@ def main() -> None:
         db.create_all()
         seed_skills_if_needed()
 
-    host = os.environ.get("HOST", "127.0.0.1")
+    host = os.environ.get("HOST", "0.0.0.0")
     port = int(os.environ.get("PORT", "5000"))
     debug = bool(app.config.get("DEBUG", False))
 
